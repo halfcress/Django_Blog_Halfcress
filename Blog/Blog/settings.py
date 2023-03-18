@@ -55,7 +55,12 @@ ROOT_URLCONF = 'Blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / "templates"
+            #basedir direk projenin yolunu veriyor, ana proje altındaki templates klasöründeki html dosyalarına bakması için buraya bu şekilde bir ekleme yapıldı.
+            
+            
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
