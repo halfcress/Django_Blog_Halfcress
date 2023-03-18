@@ -1,8 +1,15 @@
+
 {% extends 'base.html' %} <!-- block ile bir content çağıracağız fakat hangi block olduğunu burada tanımlamak gerekiyor. Başka bir template den çekmemesi için. İstediğim template i burada tanımlıyorum -->
+
+{% load static %} <!-- base html e eklemiş olsak bile burada da static dosyalar için bunu eklemek şart. -->
 
 {% block title %} Anasayfa {% endblock %} <!-- base.html içerisinde title ı dinamik olarak bıraktım ve buradan kontrol edebiliyorum. İki title block arasına ne yazarsam title o şekilde değişecek. -->
 
 {% block content %} <!-- block content ile base html i buraya aktardım. -->
+
+<img src="{% static 'myapp/img/django.png' %}" alt="django-logo-myappstatic"> <!-- bu template dosyası myapp in altında olduğu için, burada bir static dosyası oluşturmuş olmak gerekli. App bazında oluyor dosya, proje bazında değil.-->
+<!-- bu static altına myapp - img diye iki alt klasör ve içerisine logoyu attım. Böylece çalıştı. static tag i burda static/ klasörünü temsil ediyor myapp dizinindeki. -->
+<!-- django aslında static etiketi ile bütün staticleri arıyor her klasörde. Bu yüzden spesifikasyon veriyoruz. -->
 
 <h1>qweqweqwe</h1>
 <!-- İlerleyen zamanlarda emmet için bir çalışma yapmak gerekli, snippetler doğru çalışmıyor ayarları bozuk olabilir. Zaman harcamak istemiyorum şuan. Javascript ile paralel inceleyeceğim. -->

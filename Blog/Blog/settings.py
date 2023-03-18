@@ -58,7 +58,7 @@ TEMPLATES = [
         'DIRS': [
             BASE_DIR / "templates"
             #basedir direk projenin yolunu veriyor, ana proje altındaki templates klasöründeki html dosyalarına bakması için buraya bu şekilde bir ekleme yapıldı.
-            
+
             
         ],
         'APP_DIRS': True,
@@ -122,7 +122,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATICFILES_DIR = [
+    BASE_DIR / "static" #burada proje bazındaki static file ı tanımladık, ana projeninkileri buradan çekecek.
+] 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
