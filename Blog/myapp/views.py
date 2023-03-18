@@ -4,10 +4,13 @@ from django.http.response import HttpResponse
 # Create your views here.
 
 def index(request):
-    return HttpResponse("home page")
+    return render(request, "myapp/index.html")
 
 def blogs(request):
-    return HttpResponse("blogs")
+    return render(request, "myapp/blogs.html")
 
 def blog_details(request, id):
-    return HttpResponse("blog details: " + str(id))
+    return render(request, "myapp/blog-details.html", {
+        "id" : id
+        #string içerisine alınan şekliyle gönderilir html sayfasına. Yani "a" yazsaydık, html sayfasının içerisinde {{a}} ile çağırmak gerekecekti.
+    })

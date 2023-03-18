@@ -18,5 +18,7 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('myapp.urls'))
+    path('',include('myapp.urls')) #Burası önemli. Projeye myapp i tanıttıktan sonra, myapp url lerinin tamamını burada include ettiğim için, artık direk myapp url içerisindeki index, root index e karşılık geliyor.
+    #eğer path('myapp/',include('myapp.urls')) şeklinde include etseydim root a değil, myapp url leri myapp/index şeklinde çağrılacaktı.
+    #böylece bütün appleri birbirinden ilerleyen zamanlarda ayrıştırabilirim.
 ]
