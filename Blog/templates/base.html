@@ -8,10 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %} {% endblock %} | BlogApp </title> <!-- dinamik title gelmesi için burada bir block title değişkeni tanımlandı aynı content te olduğu gibi. Bunu da her html sayfasından değiştirebilirim. -->
     <!-- block title arası boş bırakıldı diğer html lerden bilgiyi almak için. dinamik olması için. Pipe işareti ve BlogApp ise sabit olarak her bir dinamik verinin sonuna bastırılacak. -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
 </head>
 <body>
     {% block content %} <!-- diğer html sayfalarında değişecek kısım burası olduğu için burayı block content olarak alıyorum.-->
     {% endblock %}
 
+    <script src="{% static 'js/bootstrap.min.js' %}"> </script>
 </body>
 </html>
